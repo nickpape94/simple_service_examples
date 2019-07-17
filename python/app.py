@@ -2,12 +2,20 @@
 from flask import Flask, jsonify, make_response
 import sys
 import requests
+import string
+import random
+
 from random import randint
 app = Flask(__name__)
 
 @app.route('/test', methods=['GET'])
 def test():
-    return "test"
+    my_string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    index1 = random.randint(0,25)
+    index2 = random.randint(0,25)
+    letter1 = my_string[index1]
+    letter2 = my_string[index2]
+    return(letter1 +letter2)
 
 @app.route('/numgen/max/<int:max>/', methods=['GET'])
 def num_gen_minmax(max):
