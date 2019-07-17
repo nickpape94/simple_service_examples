@@ -10,14 +10,12 @@ app = Flask(__name__)
 
 @app.route('/test', methods=['GET'])
 def test():
-    my_string = "abcdefghijklmnopqrstuvwxyz"
+    my_string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     index1 = random.randint(0,25)
     index2 = random.randint(0,25)
-    index3 = random.randint(0,25)
     letter1 = my_string[index1]
     letter2 = my_string[index2]
-    letter3 = my_string[index3]
-    return(letter1 +letter2 + letter3)
+    return(letter1 +letter2)
 
 @app.route('/numgen/max/<int:max>/', methods=['GET'])
 def num_gen_minmax(max):
